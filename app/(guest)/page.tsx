@@ -91,13 +91,13 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
     <div className="py-4">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between text-left font-medium text-foreground text-base cursor-pointer"
+        className="flex w-full items-center justify-between text-left font-medium text-white text-base cursor-pointer"
       >
         {question}
         <ChevronDown className={`size-4 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <p className="mt-3 text-muted-foreground leading-relaxed">{answer}</p>
+        <p className="mt-3 text-white/70 leading-relaxed">{answer}</p>
       )}
     </div>
   );
@@ -453,8 +453,8 @@ const formVariants = {
                     {volunteerTab === 1 && (
                     <div className="max-w-3xl mx-auto">
                     <div className="mb-6">
-                    <h2 className="text-2xl font-bold text-foreground">Upcoming Events</h2>
-                    <p className="text-muted-foreground mt-1">Join us at any of these upcoming volunteer activities.</p>
+                    <h2 className="text-2xl font-bold text-white">Upcoming Events</h2>
+                    <p className="text-white/70 mt-1">Join us at any of these upcoming volunteer activities.</p>
                     </div>
                     <ScrollArea className="h-[400px] pr-4">
                     <ItemGroup>
@@ -463,16 +463,16 @@ const formVariants = {
                             <ItemMedia>
                             <div className="flex items-center gap-3">
                                 <div className="flex flex-col items-center min-w-[36px]">
-                                <span className="text-xl font-bold leading-none text-foreground">{event.date.split(" ")[1]}</span>
-                                <span className="text-xs text-muted-foreground uppercase tracking-wide">{event.date.split(" ")[0]}</span>
+                                <span className="text-xl font-bold leading-none text-white">{event.date.split(" ")[1]}</span>
+                                <span className="text-xs text-white/70 uppercase tracking-wide">{event.date.split(" ")[0]}</span>
                                 </div>
                                 <div className="w-1 h-10 rounded-full" style={{ backgroundColor: event.color }} />
                             </div>
                             </ItemMedia>
-                            <ItemContent>
-                            <ItemTitle>{event.title}</ItemTitle>
-                            <ItemDescription>{event.location}</ItemDescription>
-                            </ItemContent>
+                              <ItemContent>
+                                <ItemTitle className="text-white">{event.title}</ItemTitle>
+                                <ItemDescription className="text-white/70">{event.location}</ItemDescription>
+                              </ItemContent>
                             <ItemActions>
                             <span
                                 className="text-xs font-medium px-3 py-1 rounded-full"
@@ -491,14 +491,14 @@ const formVariants = {
                     {volunteerTab === 2 && (
                                     <div className="mx-auto max-w-4xl">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                   Frequently Asked Questions
                 </h2>
-                  <p className="mt-4 text-m text-muted-foreground max-w-2xl mx-auto">
+                  <p className="mt-4 text-m text-white/70 max-w-2xl mx-auto">
                     If you can't find what you're looking for,{" "}
                     <Link
                       href="/contact"
-                      className="text-emerald-600 hover:underline dark:text-emerald-400 font-medium"
+                      className="text-emerald-600 hover:underline dark:text-emerald-300 font-medium"
                     >
                       get in touch
                     </Link>
